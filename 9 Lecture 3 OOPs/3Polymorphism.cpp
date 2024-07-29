@@ -1,5 +1,5 @@
 // run time polymorphism
-// upcasting
+// downcasting
 
 #include<iostream>
 using namespace std;
@@ -11,6 +11,9 @@ class Animal{
     }
     virtual void speak(){
         cout<< "speaking"<<endl;
+    }
+    void speakNew(){
+        cout<< "speaking new"<<endl;
     }
     
 };
@@ -24,17 +27,21 @@ class Dog:public Animal{
     void speak(){
         cout<< "Barking"<<endl;
     }
-    
+    virtual void speakNew(){
+        cout<< "Barking new"<<endl;
+    }
 };
 
 int main(){
     // UpCasting
-    Animal* a = new Dog();
-    // a->speak();//speaking when virtual not in use
+    Dog* a = (Dog*)new Animal();
+    // a->speak();//speaking 
     //speaking Old without virtual means Animal ka (Animal* a)
-    a->speakOld();
-    a->speak();//Barking
-    // virtual keyword jis type ka object hai mean new Dog(); iska method call hoga
+    a->speakOld();//Barking old when virtual not in use method calls for ka (Animal* a)
+
+    // virtual keyword jis type ka object hai mean new Animal(); iska method call hoga
+    a->speak();//speaking with virtual new Animal();
+    // a->speakNew();//nhi chal rha
     
     return 0;
 }

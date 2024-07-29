@@ -1,5 +1,5 @@
 // run time polymorphism
-// function overriding
+// ->function overriding
 #include<iostream>
 using namespace std;
 
@@ -15,8 +15,7 @@ class Cat:public Animal{
 };
 class Dog:public Animal{
     public:
-    // jb parent class k kisi function ko khud se child class me define krte ho
-    // tb usse function overriding bolte hai
+    // jb parent class k kisi function ko khud se child class me define krte ho tb usse function overriding bolte hai.
     
     // overriding
     void speak(){

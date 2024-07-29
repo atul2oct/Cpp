@@ -1,0 +1,4 @@
+complie time vs run time poly
+inheritance diamond problem
+abstraction 
+abstraction vs encapsulation

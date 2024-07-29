@@ -10,7 +10,7 @@ class Animal {
         cout<<"Eating"<<endl;
     }
 };
-
+// class child : mode of inhertance parent class
 class Dog:public Animal {
     public:
     void print(){
