@@ -49,6 +49,21 @@ void reverseMethod1(int arr[],int size){
     cout<<"Temp Method: ";
     int start=0;
     int end=size-1;
+    while(start < end){
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
+    }
+    print(arr,size);
+}
+
+void reverseMethod0(int arr[],int size){
+    // swap using temp
+    cout<<"Temp Method: ";
+    int start=0;
+    int end=size-1;
     for(int i=0;i<size/2;i++){
         int temp=arr[i];
         arr[i]=arr[size-1-i];

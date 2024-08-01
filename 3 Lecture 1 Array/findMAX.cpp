@@ -36,8 +36,8 @@ int main(){
     int arr[]={1,2,5,7,4,3,9,0};
     int a[]={1,2,5,7,4,3,9};
     int size=sizeof(arr)/sizeof(arr[0]);
-    cout << findMax(arr,size) << endl;
-    cout << findMin(arr,size) << endl;
+    cout <<"MAX "<< findMax(arr,size) << endl;
+    cout <<"MIN "<< findMin(arr,size) << endl;
     cout<<"Print extreme in array: "<<endl;
     printExtreme(a,sizeof(a)/sizeof(a[0]));
     cout<<endl;

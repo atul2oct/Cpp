@@ -12,8 +12,7 @@ using namespace std;
 int main(){
     // pass by refernce in function
     int arr[10]={5,6};
-    inc(arr,2);
-    cout<<endl;
     printf(arr,2);
-    
+    cout<<endl;
+    inc(arr,2);    
 }

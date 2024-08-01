@@ -1,5 +1,6 @@
 #include<iostream>
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
+#include <cstring>  // For memset
 using namespace std;
 int main(){
 
@@ -18,13 +19,6 @@ int main(){
         cout<<arr3[i]<<" ";
     }
     cout<<endl;
-    int a[5];
-    // all elements of A are zero
-    cout << "memset"<<endl;
-    memset(a, 1, sizeof(a));
-    for (int i = 0; i < 5; i++){
-        cout << a[i] << " ";
-    }
     
     cout<<endl;
     int arr2[10];//garbage value
