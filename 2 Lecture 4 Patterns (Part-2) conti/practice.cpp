@@ -4,19 +4,16 @@ int main(){
     cout<<"Enter no. of Row"<<endl;
     int n;
     cin>>n;
-
-    // for(int row=0;row<n;row++){
-    //     // spaces
-    //     for(int space=0;space<row;space++){
-        
-        
-    //     }
-    //     // stars
-    //     for(int star=0;star<row;star++){
-        
-        
-    //     }
-    // }
+// 1
+// 1*2
+// 1*2*3
+// 1*2*3*4
+// 1*2*3*4*5
+// 1*2*3*4*5
+// 1*2*3*4
+// 1*2*3
+// 1*2
+// 1
 
     // upper
     for(int row=0;row<n;row++){
@@ -39,5 +36,26 @@ int main(){
         }
         cout<<endl;
         
+    }
+
+// 1
+// 121
+// 12321
+// 1234321
+// 123454321
+
+    for(int row = 0;row<n;row++){
+        // increase
+        int col;
+        for(col=0;col<row+1;col++){
+            cout<<col+1;
+
+        }
+        col--;
+        for(;col>0;col--){
+            cout<<col;
+
+        }
+        cout<<endl;
     }
 }
