@@ -19,6 +19,24 @@ int main(){
         }
         cout<<endl;
     }
+
+//  * * * * *
+//   * * * *
+//    * * *
+//     * *
+//      *
+    for(int row = 0;row<n;row++){
+        // space
+        for(int space = 0;space<row;space++){
+            cout<<" ";
+        }
+        // star
+        for(int star = 0;star<n-row;star++){
+            cout<<"* ";
+        }
+        cout<<endl;
+    }
+    
 // 1
 // 1*2
 // 1*2*3
