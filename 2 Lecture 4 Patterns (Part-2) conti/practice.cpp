@@ -58,4 +58,24 @@ int main(){
         }
         cout<<endl;
     }
+
+// A
+// ABA
+// ABCBA
+// ABCDCBA
+// ABCDEDCBA
+    for(int row=0;row<n;row++){
+        int col;
+        for(col=0;col<row+1;col++){
+            char ch = 'A'+col;
+            cout<<ch;
+        }
+
+        col--;
+        for(;col>0;col--){
+            char ch = 'A'+col-1;
+            cout<<ch;
+        }
+        cout<<endl;
+    }
 }
