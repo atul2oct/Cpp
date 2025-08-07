@@ -82,6 +82,51 @@ int main(){
         }
         cout<<endl;
     }
+
+// **********
+// ****  ****
+// ***    ***
+// **      **
+// *        *
+// *        *
+// **      **
+// ***    ***
+// ****  ****
+// **********
+    for(int row = 0;row<n;row++){
+        //left stars
+        for(int Lstar=0;Lstar<n-row;Lstar++){
+            cout << "*";
+        }
+        // space
+        for(int space=0;space<row*2;space++){
+            cout << " ";
+        }
+        //right stars
+        for(int Rstar=0;Rstar<n-row;Rstar++){
+            cout << "*";
+        }
+        
+        cout<<endl;
+    }
+
+    for(int row = 0;row<n;row++){
+        //left stars
+        for(int Lstar=0;Lstar<row+1;Lstar++){
+            cout << "*";
+        }
+        // space
+        for(int space=0;space<2*(n-row-1);space++){
+            cout << " ";
+        }
+        //right stars
+        for(int Rstar=0;Rstar<row+1;Rstar++){
+            cout << "*";
+        }
+        
+        cout<<endl;
+    }
+    
 // 1
 // 1*2
 // 1*2*3
