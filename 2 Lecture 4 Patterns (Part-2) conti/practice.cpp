@@ -4,6 +4,21 @@ int main(){
     cout<<"Enter no. of Row"<<endl;
     int n;
     cin>>n;
+//      * 
+//     * *
+//    * * *
+//   * * * *
+    for(int row = 0;row<n;row++){
+        // space
+        for(int space = 0;space<n-1-row;space++){
+            cout<<" ";
+        }
+        // star
+        for(int star = 0;star<row+1;star++){
+            cout<<"* ";
+        }
+        cout<<endl;
+    }
 // 1
 // 1*2
 // 1*2*3
