@@ -27,24 +27,39 @@ int main(){
     // }
     // cout<<endl;
 
-    int arr2[10]={0};
-    for(int i=0;i<10;i++){
-        cout<<arr2[i];
-    }
-    cout<<endl;
+    // int arr2[10]={0};
+    // for(int i=0;i<10;i++){
+    //     cout<<arr2[i];
+    // }
+    // cout<<endl;
 
-    int arr[7];
-    cout<<arr<<endl;
-    cout<<&arr<<endl;
+    // int arr[7];
+    // cout<<arr<<endl;
+    // cout<<&arr<<endl;
     
-    int arrA[]={2,3,4,5};
-    int arrB[5]={2,3,4,5};
-    int arrC[10]={2,3,4,5};
+    // int arrA[]={2,3,4,5};
+    // int arrB[5]={2,3,4,5};
+    // int arrC[10]={2,3,4,5};
 
-    for(int i=0;i<10;i++){
-        cout<<arrC[i]<<" ";
+    // for(int i=0;i<10;i++){
+    //     cout<<arrC[i]<<" ";
+    // }
+
+    // int TakeArr[1000];
+
+    int arr[10];
+    int n;
+    cout<<"How many no.s you want to add in array"<<endl;
+    cin>>n;
+    cout<<"Enter no. to add in array"<<endl;
+
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
     }
-
-    int TakeArr[1000];
+    
+    cout<<sizeof(arr);
+    cout<<endl;
+    cout<<sizeof(arr[0]);
+    return 0;
 
 }
