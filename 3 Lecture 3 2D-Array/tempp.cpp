@@ -1,6 +1,50 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
+void printf(vector<vector<int>> arr){
+    for(int i=0;i<arr.size();i++){
+        for(int j=0;j<arr[i].size();j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+}
 int main(){
+
+    // vector<int> a {1,2};
+    // vector<int> b {1};
+    // vector<int> c {1,2,3};
+
+    // vector<vector<int>> arr;
+
+    // arr.push_back(a);
+    // arr.push_back(b);
+    // arr.push_back(c);
+
+    // printf(arr);
+
+    // int row = 3;
+    // int col = 4;
+    // vector<vector<int>> brr (row, vector<int>(col, 0));
+    // printf(brr);
+
+    // vector<vector<int>> crr (5, vector<int> (5, -8));
+    // printf(crr);
+
+    int arr [3][3];
+    int a[3][3]= {
+        {1,2,3},
+        {4,5,6},
+        {7,8,9}
+    };
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            cout<<a[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    
+    
     return 0;
 }
