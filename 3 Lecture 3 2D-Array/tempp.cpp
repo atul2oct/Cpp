@@ -10,6 +10,16 @@ void printf(vector<vector<int>> arr){
         cout<<endl;
     }
 }
+bool Search(int arr[][3], int row, int col, int element ){
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            if(element == arr[i][j]){
+                return true;
+            }
+        }
+    }
+    return false;
+}
 int main(){
 
     // vector<int> a {1,2};
@@ -32,19 +42,33 @@ int main(){
     // vector<vector<int>> crr (5, vector<int> (5, -8));
     // printf(crr);
 
-    int arr [3][3];
-    int a[3][3]= {
-        {1,2,3},
-        {4,5,6},
-        {7,8,9}
-    };
-    for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
-            cout<<a[i][j]<<" ";
+    // int arr [3][3];
+    // int a[3][3]= {
+    //     {1,2,3},
+    //     {4,5,6},
+    //     {7,8,9}
+    // };
+    // for(int i=0;i<3;i++){
+    //     for(int j=0;j<3;j++){
+    //         cout<<a[j][i]<<" ";
+    //     }
+    //     cout<<endl;
+    // }
+    int a[3][3];
+    int row=3;
+    int col=3;
+    int find=30;
+    // input
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            cin>>a[i][j];
         }
-        cout<<endl;
     }
-    
+    if(Search(a,row,col,find)){
+        cout<<"TRUE";
+    }else{
+        cout<<"FALSE";
+    }
     
     return 0;
 }
