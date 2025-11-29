@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<limits.h>
 using namespace std;
 
 void printf(vector<vector<int>> arr){
@@ -20,6 +21,33 @@ bool Search(int arr[][3], int row, int col, int element ){
     }
     return false;
 }
+
+int getMin(int arr[][3],int row, int col){
+    int mini = INT_MAX;
+
+    for(int i=0;i<row;i++){
+        for(int j=0;j<row;j++){
+            if(arr[i][j] < mini){
+                mini = arr[i][j];
+            }
+        }
+    }
+    return mini;
+
+}
+int getMax(int arr[][3],int row, int col){
+    int maxi = INT_MIN;
+
+    for(int i=0;i<row;i++){
+        for(int j=0;j<row;j++){
+            if(arr[i][j] > maxi){
+                maxi = arr[i][j];
+            }
+        }
+    }
+    return maxi;
+}
+
 int main(){
 
     // vector<int> a {1,2};
@@ -64,11 +92,14 @@ int main(){
             cin>>a[i][j];
         }
     }
-    if(Search(a,row,col,find)){
-        cout<<"TRUE";
-    }else{
-        cout<<"FALSE";
-    }
+    // if(Search(a,row,col,find)){
+    //     cout<<"TRUE";
+    // }else{
+    //     cout<<"FALSE";
+    // }
+
+    cout<<"Minimum: "<<getMin(a,row,col)<<endl;
+    cout<<"Maximum: "<<getMax(a,row,col)<<endl;
     
     return 0;
 }
