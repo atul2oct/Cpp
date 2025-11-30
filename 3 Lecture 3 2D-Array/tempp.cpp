@@ -48,6 +48,25 @@ int getMax(int arr[][3],int row, int col){
     return maxi;
 }
 
+void printWiseSumRow(int arr[][3],int row,int col){
+    for(int i=0;i<row;i++){
+        int sum = 0;
+        for(int j=0;j<row;j++){
+            sum += arr[i][j];            
+        }
+        cout<<"row wise sum of "<<""<<sum<<endl;
+    }
+}
+void printWiseSumCol(int arr[][3],int row,int col){
+    for(int i=0;i<col;i++){
+        int sum =0;
+        for(int j=0;j<row;j++){
+            sum += arr[j][i];
+            cout<<"col wise sum of "<<""<<sum<<endl;
+        }cout<<sum<<endl;
+    }
+}
+
 int main(){
 
     // vector<int> a {1,2};
@@ -98,8 +117,11 @@ int main(){
     //     cout<<"FALSE";
     // }
 
-    cout<<"Minimum: "<<getMin(a,row,col)<<endl;
-    cout<<"Maximum: "<<getMax(a,row,col)<<endl;
+    // cout<<"Minimum: "<<getMin(a,row,col)<<endl;
+    // cout<<"Maximum: "<<getMax(a,row,col)<<endl;
+
+    // printWiseSumRow(a,row,col);
+    printWiseSumCol(a,row,col);
     
     return 0;
 }
