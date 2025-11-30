@@ -66,6 +66,19 @@ void printWiseSumCol(int arr[][3],int row,int col){
         }cout<<sum<<endl;
     }
 }
+void transpose(int arr[][3],int transposeArr[][3],int row,int col){
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            transposeArr[j][i]=arr[i][j];
+        }
+    }
+
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            cout<<transposeArr[i][j]<<" ";
+        }cout<<endl;
+    }
+}
 
 int main(){
 
@@ -105,6 +118,7 @@ int main(){
     int row=3;
     int col=3;
     int find=30;
+    int transposeArr[3][3];
     // input
     for(int i=0;i<row;i++){
         for(int j=0;j<col;j++){
@@ -121,7 +135,8 @@ int main(){
     // cout<<"Maximum: "<<getMax(a,row,col)<<endl;
 
     // printWiseSumRow(a,row,col);
-    printWiseSumCol(a,row,col);
+    // printWiseSumCol(a,row,col);
+    transpose(a,transposeArr,row,col);
     
     return 0;
 }
