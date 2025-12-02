@@ -71,12 +71,31 @@ void sort(vector<int> arr){
     Array(arr);
 }
 
+
+void sort1(vector<int> arr){
+    int l=0,m=0,h=arr.size()-1;
+    while(m <= h){
+        if(arr[m] == 0){
+            swap(arr[m],arr[l]);
+            l++,m++;
+        }else if(arr[m] == 1){
+            m++;
+        }else{
+            // if arr[m] == 2
+            swap(arr[m],arr[h]);
+            h--;
+        }
+    }
+    Array(arr);
+}
+
 int main(){
     // vector<int> arr {1,3,5,3,4};
     // findMissing2(arr,arr.size());
 
-    vector<int> arr{2,0,2,1,1,0};
-    sort(arr);
+    // vector<int> arr{2,0,2,1,1,0};
+    vector<int> arr{2,0,1};
+    sort1(arr);
 
     return 0;
 }
