@@ -45,8 +45,38 @@ void findMissing2(vector<int> & a, int n){
 
 }
 
+void Array(vector<int> arr){
+    for(auto value : arr){
+        cout<<value<<"  ";
+    }
+    cout<<endl;
+}
+void sort(vector<int> arr){
+    int zero=0,one=0,two=0;
+
+    for(auto value : arr){
+        if(value == 0){
+            zero++;
+        }else if(value == 1){
+            one++;
+        }else{
+            two++;
+        }
+
+    }
+    int i = 0;
+    while(zero--) arr[i++] = 0;
+    while(one--) arr[i++] = 1;
+    while(two--) arr[i++] = 2;
+    Array(arr);
+}
+
 int main(){
-    vector<int> arr {1,3,5,3,4};
-    findMissing2(arr,arr.size());
+    // vector<int> arr {1,3,5,3,4};
+    // findMissing2(arr,arr.size());
+
+    vector<int> arr{2,0,2,1,1,0};
+    sort(arr);
+
     return 0;
 }

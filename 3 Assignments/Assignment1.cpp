@@ -53,18 +53,21 @@ void sort2MEthod2(vector<int> arr){
         }
     }
     int i=0;
-    while(zero--){
-        arr[i]=0;
-        i++;
-    }
-    while(one--){
-        arr[i]=1;
-        i++;
-    }
-    while(two--){
-        arr[i]=2;
-        i++;
-    }
+    // while(zero--){
+    //     arr[i]=0;
+    //     i++;
+    // }
+    // while(one--){
+    //     arr[i]=1;
+    //     i++;
+    // }
+    // while(two--){
+    //     arr[i]=2;
+    //     i++;
+    // }
+    while(zero--) arr[i++] = 0;
+    while(one--) arr[i++] = 1;
+    while(two--) arr[i++] = 2;
     print(arr);
 }
 // inplace suffel sort solution three pointer approach
