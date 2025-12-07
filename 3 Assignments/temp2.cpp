@@ -88,14 +88,92 @@ void sort1(vector<int> arr){
     }
     Array(arr);
 }
+void moveAllNegativeToLeft(vector<int> arr){
+    int l=0,h =arr.size()-1;
+    while(l<h){
+        if(arr[l] < 0){
+            l++;
+        }
+        else if(arr[h] > 0){
+            h--;
+        }else{
+            // (+ve no hai)arr[l] > 0 and arr[h] < 0(-ve no hai)
+            swap(arr[l],arr[h]);
+        }
+    }
+    Array(arr);
+}
 
+int findDuplicate3(vector<int> arr){
+    int ans= -1;
+    for(int i=0;i<arr.size();i++){
+        int index = abs(arr[i]);
+        // already visited
+        if(arr[index] < 0){
+            ans = index;
+            break;
+        }
+        // mark visited
+        arr[index] *= -1;
+    }
+    return ans;
+}
+int findDuplicate(vector<int> arr){
+    while(arr[0] != arr[arr[0]]){
+        swap(arr[0],arr[arr[0]]);
+    }
+    return arr[0];
+}
+
+void findMissing(vector<int> arr){
+    for(int i=0;i<arr.size();i++){
+        int index = abs(arr[i]);
+        if(arr[index-1] > 0)
+            arr[index-1] *= -1;
+    }
+
+    for(int i=0;i<arr.size();i++){
+        if(arr[i] > 0){
+            cout<<i+1;
+        }
+    }
+    
+}
+
+void findMissing2(vector<int> & arr){
+    int i=0;
+    while(i<arr.size()){
+        int index = arr[i] - 1;
+        if(arr[index] != arr[i]){
+            swap(arr[index],arr[i]);
+        }else{
+            i++;
+        }
+    }
+
+    for(int i=0;i<arr.size();i++){
+        if(arr[i] != i+1){
+            cout<<i+1<<" ";
+        }
+    }
+}
 int main(){
     // vector<int> arr {1,3,5,3,4};
     // findMissing2(arr,arr.size());
 
     // vector<int> arr{2,0,2,1,1,0};
-    vector<int> arr{2,0,1};
-    sort1(arr);
+    // vector<int> arr{2,0,1};
+    // sort1(arr);
+    // vector<int> arr{1,2,-3,4,-5,6};
+    // vector<int> arr{1,-1,-3,-4,-6};
+    // moveAllNegativeToLeft(arr);
+
+    // vector<int> nums {1,3,4,2,2};
+    // cout<<findDuplicate(nums)<<endl;
+
+    vector<int> arr {1,3,5,3,4};
+    // findMissing(arr,arr.size());
+    findMissing2(arr);
 
     return 0;
 }
