@@ -10,10 +10,10 @@ int binarySearch(vector<int> arr, int target){
         if(arr[mid] == target){
             return mid;
         }
-        if(arr[mid-1] == target){
+        if(mid-1>=start  && arr[mid-1] == target){
             return mid-1;
         }
-        if(arr[mid+1]==target){
+        if(mid+1<= end && arr[mid+1]==target){
             return mid+1;
         }
 
