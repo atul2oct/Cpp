@@ -52,7 +52,7 @@ int findPair2(vector<int>& arr, int k){
 }
 
 int main(){
-    vector<int> arr {3};
+    vector<int> arr {3,1};
     int k = 0;
     cout<<findPair2(arr,k);
     return 0;
