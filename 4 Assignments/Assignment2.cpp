@@ -63,6 +63,7 @@ vector<int> findClosestElements(vector<int>& arr, int k, int x) {
 }
 
 // leetcode best approach with binary search
+// pending
 int main(){
     vector<int> arr {1,2,3,4,5};
     int k=44;
