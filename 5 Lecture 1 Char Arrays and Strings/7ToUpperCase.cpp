@@ -21,10 +21,17 @@ int getLength(char name[]){
     return length;
 }
 
-void convertIntoUpperCase(char ch[]){
+void convertIntoUpperCase1(char ch[]){
     int length=getLength(ch);
     for(int i=0;i<length;i++){
         ch[i]=ch[i]-'a'+'A';
+    }
+}
+// better 
+void convertIntoUpperCase(char ch[]){
+    int length=getLength(ch);
+    for(int i=0;i<length;i++){
+        ch[i] = ( ch[i] != ' ' ) ? ch[i]-'a'+'A' : ch[i];
     }
 }
 /*convert into lowercase 
@@ -38,9 +45,10 @@ eg: 'C'
 */
 int main(){
     char ch[100];
-    cin>>ch;
+    cin.getline(ch,50);
     cout<<"starting me tha: "<<ch<<endl;
     int length=getLength(ch);
+    cout<<"length "<<length<<endl;
     convertIntoUpperCase(ch);
     for(int i=0;i<length;i++){
         cout<<ch[i];

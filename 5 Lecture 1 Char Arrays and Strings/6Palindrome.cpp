@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string.h>
 using namespace std;
+
 // eg: racecar reverse is also same as before racecar noon, babbab,kadak,lol
 bool Palindrome(char sentence[]){
     // 1. i/p
@@ -15,6 +16,7 @@ bool Palindrome(char sentence[]){
         start++;
     }
 }
+
 bool Palindrome(char sentence[]){//babbar wla
     int last=strlen(sentence)-1;
     int start=0;
@@ -29,6 +31,7 @@ bool Palindrome(char sentence[]){//babbar wla
     }
     return true;
 }
+
 bool PalindromeOptimise(char word[]){//mera wla
     // compare using two pointer approach 
     // compare start element with last elelement if same conti
@@ -44,6 +47,7 @@ bool PalindromeOptimise(char word[]){//mera wla
     }
     return true;
 }
+
 int main(){
     char ch[100];
     cin>>ch;

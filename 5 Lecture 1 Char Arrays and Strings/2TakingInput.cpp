@@ -8,11 +8,8 @@ int main(){
     // cin>>ch;//atul yadav
 
     // cout<<ch<<endl;//atul
-    cin.getline(ch,50);
-    cout<<ch;
-
-    // 
-
+    cin.getline(ch,50);//atul yadav
+    cout<<ch;//atul yadav
 
     return 0;
 }
