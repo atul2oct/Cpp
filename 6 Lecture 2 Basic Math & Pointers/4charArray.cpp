@@ -8,7 +8,7 @@ int main(){
     char* c=&ch;
     
     // cout<<c<<endl; //Babbar
-
+    cout<<ch<<endl;
     cout<<c<<endl;//k♂ a
     return 0;
 }

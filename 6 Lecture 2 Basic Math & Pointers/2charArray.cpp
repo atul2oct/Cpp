@@ -12,8 +12,11 @@ int main(){
     cout<<ch<<endl;
     cout<<&ch<<endl;
     cout<<ch[0]<<endl;
+    cout<<ch[1]<<endl;
 
     cout<<c<<endl;
     cout<<&c<<endl;
     cout<<*c<<endl;
+    cout<<*(c+2)<<endl;
+    cout<<c+2<<endl;
 }
