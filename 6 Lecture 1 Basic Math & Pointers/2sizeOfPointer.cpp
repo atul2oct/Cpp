@@ -16,7 +16,7 @@ int main(){
 
     // bad practice SEGMENTATION FAULT
     // int* p;
-    // cout<<*p<<endl; 458873079 garbage value
+    // cout<<*p<<endl; //458873079 garbage value
     // null pointer
     // int* pp=nullptr;//or use 0
     // cout<<*pp<<endl;
