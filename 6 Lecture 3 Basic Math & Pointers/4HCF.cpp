@@ -1,4 +1,4 @@
-// gcd or hcf
+// gcd or hcf https://www.geeksforgeeks.org/problems/gcd-of-two-numbers3459/1
 #include<iostream>
 #include<vector>
 using namespace std;

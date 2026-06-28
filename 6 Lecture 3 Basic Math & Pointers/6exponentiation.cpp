@@ -1,4 +1,4 @@
-
+//https://www.geeksforgeeks.org/problems/modular-exponentiation-for-large-numbers5537/1
 #include<iostream>
 #include<vector>
 using namespace std;
