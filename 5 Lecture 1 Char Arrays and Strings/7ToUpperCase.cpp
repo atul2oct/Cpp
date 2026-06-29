@@ -34,6 +34,12 @@ void convertIntoUpperCase(char ch[]){
         ch[i] = ( ch[i] != ' ' ) ? ch[i]-'a'+'A' : ch[i];
     }
 }
+// ch[4] = ' ' - 'a' + 'A';
+// ASCII values:
+// ' ' = 32
+// 'a' = 97
+// 'A' = 65
+
 /*convert into lowercase 
     'a'->97 and 'A'->65
     'A'-'A'+'a'='a'
