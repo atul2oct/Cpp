@@ -15,9 +15,26 @@ string removeDuplicate(string str){
     }
     return ans;
 }
+string removeOccurrencesOld(string s,string part){
+    int pos = s.find(part);
+    while(pos != string::npos){
+        s.erase(pos,part.length());
+        pos = s.find(part);
+    }
+    return s;
+}
+string removeOccurrences(string s,string part){
+    while(s.length() > 0 && s.find(part) < s.length()){
+        //s.find(part)<s.length()  why because npos gives large value if not found loop has to be end
+        s.erase(s.find(part),part.length());
+    }
+    return s;
+}
 int main(){
-    string str="aabbbcc";
-    string ans=removeDuplicate(str);
+    string str="daabcbaabcbc";
+    // string ans=removeDuplicate(str);
+    string part="abc";
+    string ans=removeOccurrences(str,part);
     cout<<"new string without adjacent duplicates are: "<<ans<<endl;
 
 }
