@@ -30,11 +30,41 @@ string removeOccurrences(string s,string part){
     }
     return s;
 }
+
+bool checkPalindorm(string s,int i, int j){
+    while(i<j){
+        if(s[i] != s[j]){
+            return false;
+        }
+        i++;
+        j--;
+    }
+    return true;
+}
+bool validPalindrome(string s){
+    int i=0;
+    int j=s.length()-1;
+    while(i<j){
+        if(s[i] != s[j]){
+            return checkPalindorm(s,i+1,j) || checkPalindorm(s,i,j-1);
+        }else{
+            i++;
+            j--;
+        }
+    }
+    return true;
+}
 int main(){
-    string str="daabcbaabcbc";
+    // string str="daabcbaabcbc";
     // string ans=removeDuplicate(str);
-    string part="abc";
-    string ans=removeOccurrences(str,part);
-    cout<<"new string without adjacent duplicates are: "<<ans<<endl;
+    // string part="abc";
+    // string ans=removeOccurrences(str,part);
+    // cout<<"new string without adjacent duplicates are: "<<ans<<endl;
+    string str="abccba";
+    if(validPalindrome(str)){
+        cout<<"it is valid palindrome"<<endl;
+    }else{
+        cout<<"it is not a valid palindrome"<<endl;
+    }
 
 }
