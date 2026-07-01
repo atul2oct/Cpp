@@ -17,18 +17,22 @@ bool compareStr(string str1, string str2){
 }
 
 int main(){
-    string str1;
-    cout<<"Enter first string"<<endl;
-    getline(cin,str1);
+    // string str1;
+    // cout<<"Enter first string"<<endl;
+    // getline(cin,str1);
 
-    string str2;
-    cout<<"Enter second string"<<endl;
-    getline(cin,str2);
+    // string str2;
+    // cout<<"Enter second string"<<endl;
+    // getline(cin,str2);
 
-    if(compareStr(str1,str2)){
-        cout<<"Same"<<endl;
-    }else{
-        cout<<"different"<<endl;
-    }
+    // if(compareStr(str1,str2)){
+    //     cout<<"Same"<<endl;
+    // }else{
+    //     cout<<"different"<<endl;
+    // }
+    string str1="hello jee kaise ho saree hello";
+    string str2="ho";
+
+    cout<<str1.erase(0,5);
     
 }
