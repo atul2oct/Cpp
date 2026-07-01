@@ -1,5 +1,8 @@
 #include<iostream>
 #include<string>
+#include<vector>
+#include<algorithm>
+#include <limits.h>
 using namespace std;
 
 string removeDuplicate(string str){
@@ -54,17 +57,41 @@ bool validPalindrome(string s){
     }
     return true;
 }
+int findMinDifference(vector <string> s){
+    vector<int> minutes;
+    for(int i=0;i<s.size();i++){
+        string curr = s[i];
+        int hr=stoi(curr.substr(0,2));
+        int min=stoi(curr.substr(3,2));
+
+        minutes.push_back(hr*60+min);
+    }
+    sort(minutes.begin(),minutes.end());
+
+    int mini = INT_MAX;
+    for(int i=0;i<minutes.size();i++){
+        mini = min(mini,(minutes[i+1]-minutes[i]));
+    }
+
+    // case first and last
+    int lastDiff1= minutes[0]+1440 - minutes[minutes.size()-1];
+    int lastDiff2= minutes[minutes.size()-1]-minutes[0];
+    int tempmini=min(lastDiff1,lastDiff2);
+    return min(mini,tempmini);
+}
+
 int main(){
     // string str="daabcbaabcbc";
     // string ans=removeDuplicate(str);
     // string part="abc";
     // string ans=removeOccurrences(str,part);
     // cout<<"new string without adjacent duplicates are: "<<ans<<endl;
-    string str="abccba";
-    if(validPalindrome(str)){
-        cout<<"it is valid palindrome"<<endl;
-    }else{
-        cout<<"it is not a valid palindrome"<<endl;
-    }
-
+    // string str="abccba";
+    // if(validPalindrome(str)){
+    //     cout<<"it is valid palindrome"<<endl;
+    // }else{
+    //     cout<<"it is not a valid palindrome"<<endl;
+    // }
+    vector <string> str{"00:00","23:59"};
+    cout<<findMinDifference(str)<<endl;
 }
