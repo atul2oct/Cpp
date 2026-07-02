@@ -79,7 +79,23 @@ int findMinDifference(vector <string> s){
     int tempmini=min(lastDiff1,lastDiff2);
     return min(mini,tempmini);
 }
-
+int expandAroundIndex(string s,int i,int j){
+    int count=0;
+    while(i >= 0 && j < s.length() && s[i] == s[j]){
+        count++;
+        i--;
+        j++;
+    }
+    return count;
+}
+int countSubstrings(string s) {
+    int count = 0;
+    for(int i=0;i<s.length();i++){
+        count+= expandAroundIndex(s,i,i);
+        count+= expandAroundIndex(s,i,i+1);
+    }
+    return count;
+}
 int main(){
     // string str="daabcbaabcbc";
     // string ans=removeDuplicate(str);
@@ -92,6 +108,8 @@ int main(){
     // }else{
     //     cout<<"it is not a valid palindrome"<<endl;
     // }
-    vector <string> str{"00:00","23:59"};
-    cout<<findMinDifference(str)<<endl;
+    // vector <string> str{"00:00","23:59"};
+    // cout<<findMinDifference(str)<<endl;
+    string s = "aaa";
+    cout<<"total palindrome are: "<<countSubstrings(s)<<endl;
 }
