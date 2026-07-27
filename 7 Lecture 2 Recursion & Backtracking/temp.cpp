@@ -12,12 +12,21 @@ void printDigits(int n){
     int digit=n%10;
     cout<<digit<<" ";
 }
-
-int main(){
-    int n=647000;
-    if(n == 0){
-        cout<<n<<endl;
+bool countKey(string str,int& n, int i, char& key, int& count){
+    if(n <= i){
+        return false;
     }
-    printDigits(n);
+    if(str[i] == key){
+        return true;
+    }
+}
+int main(){
+    string str="lovebabbar";
+    int n=str.length();
+    char key='b';
+    int i=0;
+    int count=0;
+    countKey(str,n,i,key,count);
+    cout<<" ans: "<<count<<endl;
     return 0;
 }
