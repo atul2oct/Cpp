@@ -11,14 +11,32 @@ bool checkSorted(vector<int>& arr,int& n,int i){
     }
     return checkSorted(arr,n,i+1);
 }
-int main(){
-    vector<int> arr {10,20,30,60};
-    int n=arr.size();
-    int i=0;
-    bool isSorted=checkSorted(arr,n,i);
-    if(isSorted){
-        cout<<"Array is sorted "<<endl;
-    }else{
-        cout<<"Array is not sorted "<<endl;
+int binarySearch(vector<int> &arr,int start,int end, int& key){
+    if(start > end){
+        return -1;
     }
+
+    int mid = (start+end)/2;
+    if(arr[mid] == key){
+        return mid;
+    }
+
+    return arr[mid] < key ? binarySearch(arr,mid+1,end,key) : binarySearch(arr,start,mid-1,key);
+}
+int main(){
+    vector<int> v{10,20,40,60,70,90,99};
+    int size=v.size();
+    int target=99;
+    int s=0;
+    int e=size-1;
+
+    int indexOfTarget=binarySearch(v,s,e,target);
+
+    if(indexOfTarget == -1){
+        cout<<"Target not found"<<endl;
+    }
+    else{
+        cout<<"Found at index: "<<indexOfTarget<<endl;
+    }
+    return 0;
 }
