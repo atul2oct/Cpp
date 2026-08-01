@@ -23,20 +23,42 @@ int binarySearch(vector<int> &arr,int start,int end, int& key){
 
     return arr[mid] < key ? binarySearch(arr,mid+1,end,key) : binarySearch(arr,start,mid-1,key);
 }
-int main(){
-    vector<int> v{10,20,40,60,70,90,99};
-    int size=v.size();
-    int target=99;
-    int s=0;
-    int e=size-1;
-
-    int indexOfTarget=binarySearch(v,s,e,target);
-
-    if(indexOfTarget == -1){
-        cout<<"Target not found"<<endl;
+void printSubSequences(string str, string ans, int i){
+    if(i >= str.length()){
+        cout<<ans<<endl;
+        return;
     }
-    else{
-        cout<<"Found at index: "<<indexOfTarget<<endl;
+
+    // exclude
+    printSubSequences(str,ans,i+1);
+    //include
+    ans.push_back(str[i]);
+    printSubSequences(str,ans,i+1);
+
+}
+string storeSubSequences(string str, string ans, int i, vector<string> v){
+    if(i >= str.length()){
+        cout<<ans<<endl;
+        return;
+    }
+
+    // exclude
+    printSubSequences(str,ans,i+1);
+    //include
+    ans.push_back(str[i]);
+    printSubSequences(str,ans,i+1);
+
+}
+int main(){
+    string str="abc";
+    string output="";
+    vector<string> v;
+    int i=0;
+    printSubSequences(str,output,i);
+    storeSubSequences(str,output,i,v);
+    cout<<"Printing : "<<endl;
+    for(auto val:v){
+        cout<<val<<" ";
     }
     return 0;
 }
