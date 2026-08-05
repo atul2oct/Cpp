@@ -36,17 +36,17 @@ void printSubSequences(string str, string ans, int i){
     printSubSequences(str,ans,i+1);
 
 }
-string storeSubSequences(string str, string ans, int i, vector<string> v){
+void storeSubSequences(string str, string ans, int i, vector<string>& v){
     if(i >= str.length()){
-        cout<<ans<<endl;
+        v.push_back(ans);
         return;
     }
 
     // exclude
-    printSubSequences(str,ans,i+1);
-    //include
+    storeSubSequences(str,ans,i+1,v);
+    // inlcude
     ans.push_back(str[i]);
-    printSubSequences(str,ans,i+1);
+    storeSubSequences(str,ans,i+1,v);
 
 }
 int main(){
@@ -54,7 +54,7 @@ int main(){
     string output="";
     vector<string> v;
     int i=0;
-    printSubSequences(str,output,i);
+    // printSubSequences(str,output,i);
     storeSubSequences(str,output,i,v);
     cout<<"Printing : "<<endl;
     for(auto val:v){
