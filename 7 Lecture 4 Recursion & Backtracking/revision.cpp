@@ -59,6 +59,17 @@ int cutSegments(int n, int x, int y, int z){
     int ans = max(ans1,max(ans2,ans3));
     return ans;
 }
+void SumNonAdjacent(vector<int>& arr, int i, int sum, int& maxi){
+    if(i >= arr.size()){
+        maxi = max(sum,maxi);
+        return;
+    }
+
+    // inc
+    SumNonAdjacent(arr,i+2,sum+arr[i],maxi);
+    // exc
+    SumNonAdjacent(arr,i+1,sum,maxi);
+}
 int main(){
     // vector<int> arr{1,2,3};
     // int target=7;
@@ -67,15 +78,23 @@ int main(){
     // // int ans=coinChange2(arr,target,0);
     // cout<<"Minimum no. of ways are: "<<ans<<endl;
 
-    int n=8;
-    int x=3;
-    int y=3;
-    int z=3;
+    // int n=8;
+    // int x=3;
+    // int y=3;
+    // int z=3;
 
-    int ans=cutSegments(n,x,y,z);
-    if(ans < 0)
-        ans=0;
-    cout<<"Max no of segments are: "<<ans<<endl;
+    // int ans=cutSegments(n,x,y,z);
+    // if(ans < 0)
+    //     ans=0;
+    // cout<<"Max no of segments are: "<<ans<<endl;
     
+    // return 0;
+
+    vector<int> arr {1,2,3,5,4};
+    int index=0;
+    int sum=0;
+    int maxi=INT_MIN;
+    SumNonAdjacent(arr,index,sum,maxi);
+    cout<<maxi<<endl;
     return 0;
 }
